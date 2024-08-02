@@ -10,3 +10,8 @@ import glob
 
 # transcript file paths
 files = glob.glob('../Daddies_Transcripts/*.md')
+
+# sort by ep. number, assuming format "*Ep. [X OR XX] Episode Name"
+files.sort(key = lambda x: int(x.split("Ep. ")[1].split(" ")[0]))
+
+
