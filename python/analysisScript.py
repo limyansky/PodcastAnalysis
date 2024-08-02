@@ -18,7 +18,7 @@ files.sort(key = lambda x: int(x.split("Ep. ")[1].split(" ")[0]))
 # Marks the start of the non-scripted portion of the podcast
 intro_list = ["four dads from our world", 
               "BDSM",
-              "\\[*intro music plays*\\]"]
+              "Welcome to the conclusion of season one"]
 
 for file in files:
     ep_number = int(file.split("Ep. ")[1].split(" ")[0])
