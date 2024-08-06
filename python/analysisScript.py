@@ -54,6 +54,7 @@ for file in files:
                 in_body=True
 
 df_raw = pd.DataFrame(master_list)
+df_raw.rename(columns={0:"Episode", 1:"Speaker", 2:"Line"}, inplace=True)
 
 #speaker_count = dict(sorted(speaker_count.items(), key=lambda item: 1/item[1]))
 
