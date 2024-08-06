@@ -28,6 +28,7 @@ speaker_key = {
     "Henry":"Will",
     "Beth":"Beth",
     "Ron":"Beth",
+    "Young Ron":"Beth"
     "Jimmy":"Jimmy",
     "Jodie":"Jimmy",
     "Jenna":"Jenna",
