@@ -18,6 +18,8 @@ freddie = []
 matt = []
 will = []
 
+
+# Count the number of lines for each speaker, per episode
 for ep in range(1,70):
     df_episode = df_actors.loc[df_actors["Episode"] == ep]
     actor_counts = df_episode.groupby(['Actor'])['Actor'].count().reset_index(name="Lines")
@@ -30,6 +32,7 @@ for ep in range(1,70):
     
 episodes = list(range(1, 70))
 
+# Plot number of lines per episode
 plt.plot(episodes, anthony, label="Anthony")
 plt.plot(episodes, beth, label="Beth")
 plt.plot(episodes, freddie, label = "Freddie")
@@ -38,6 +41,7 @@ plt.plot(episodes, will, label="Will")
 plt.legend()
 plt.show()
 
+# Fraction of each episode's lines spoken by each
 anthony_frac = []
 beth_frac = []
 freddie_frac = []
