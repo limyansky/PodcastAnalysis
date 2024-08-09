@@ -40,7 +40,55 @@ speaker_key = {
     "Baz Benham Benquin": "Jason"
     }
 
+### Episode 56 ###
+# Dungeon Master: Anthony Burch   
+# Jodie Foster​: Freddie Wong   
+# Henry Oak​: Matt Arnold   
+# Ron Stampler​: Will Campos   
+# Darryl Wilson​: Beth May  
+# Glenn Close: Jimmy Wong  
+# Baz Benham Benquin: Jason Boulet
+
+speaker_key_56 = {
+    "Anthony":"Anthony",
+    "Matt":"Matt",
+    "Henry":"Matt",
+    "Freddie":"Freddie",
+    "Jodie":"Freddie",
+    "Will":"Will",
+    "Ron":"Will",
+    "Beth":"Beth",
+    "Darryl":"Beth",
+    "Jimmy":"Jimmy",
+    "Glenn":"Jimmy",
+    "Baz Benham Benquin": "Jason"
+    }
+
+### Episode 57 ### 
+# Dungeon Master: Anthony Burch   
+# Darryl Wilson: Freddie Wong   
+# Ron Stampler: Matt Arnold   
+# Glenn Close​: Will Campos   
+# Jodie Foster: Beth May  
+# Henry Oak: Jimmy Wong
+
+speaker_key_57 = {
+    "Anthony":"Anthony",
+    "Matt":"Matt",
+    "Ron":"Matt",
+    "Freddie":"Freddie",
+    "Darryl":"Freddie",
+    "Will":"Will",
+    "Glenn":"Will",
+    "Beth":"Beth",
+    "Jodie":"Beth",
+    "Jimmy":"Jimmy",
+    "Henry":"Jimmy",
+    "Baz Benham Benquin": "Jason"
+    }
 speaker_dict = defaultdict(lambda:"Anthony", speaker_key)
+speaker_dict_56 = defaultdict(lambda:"Anthony", speaker_key_56)
+speaker_dict_57 = defaultdict(lambda:"Anthony",speaker_key_57)
 
 df_raw.insert(2, "Actor", [speaker_dict[x] for x in df_raw["Speaker"]])
 df_raw["Actor"][df_raw["Speaker"].isnull()] = np.nan
@@ -50,14 +98,7 @@ df_raw.to_csv("/home/brent/Documents/github/PodcastAnalysis/Data_Products/Interm
 actor_counts = df_raw.groupby(['Actor'])['Actor'].count().reset_index(name="Lines")
 actor_counts.sort_values(by="Lines", inplace=True, ascending=False)
 
-### Episode 56 ###
-# Dungeon Master: Anthony Burch   
-# Jodie Foster​: Freddie Wong   
-# Henry Oak​: Matt Arnold   
-# Ron Stampler​: Will Campos   
-# Darryl Wilson​: Beth May  
-# Glenn Close: Jimmy Wong  
-# Baz Benham Benquin: Jason Boulet - Done
+
 
 ### Episode 57 ### 
 # Dungeon Master: Anthony Burch   
